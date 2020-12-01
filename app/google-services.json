@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "462590742694",
+    "firebase_url": "https://rappels-c34ac.firebaseio.com",
+    "project_id": "rappels-c34ac",
+    "storage_bucket": "rappels-c34ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462590742694:android:8566da2cdd93e1c630e467",
+        "android_client_info": {
+          "package_name": "com.ynov.brouard.projetrappels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462590742694-glglvo3h0p5tip0uigq8sut0916pk0r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoM0YJmyeNabTx2Rmk6Rv148JCFS9TfMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462590742694-glglvo3h0p5tip0uigq8sut0916pk0r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
