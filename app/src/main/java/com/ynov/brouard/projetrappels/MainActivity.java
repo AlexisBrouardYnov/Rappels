@@ -28,16 +28,18 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseReference mDatabase;
+    ListView listView;
+    ArrayList<String> arrayList = new ArrayList<>();
+    ArrayAdapter<String> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton ajouterRappel = findViewById(R.id.ajouterRappel);
-        mDatabase = FirebaseDatabase.getInstance().getReference("rappels");
-
         lireRappel();
+        FloatingActionButton ajouterRappel = findViewById(R.id.ajouterRappel);
+
 
         ajouterRappel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,18 +67,16 @@ public class MainActivity extends AppCompatActivity {
         }).show();
     }
 
-    private void lireRappel() {
-        ArrayList<Map<String, Object>> mRappel = new ArrayList<Map<String, Object>>();
-        ListView listeRappel = findViewById(R.id.listeRappel);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2);
-        listeRappel.setAdapter(arrayAdapter);
-
-
+    public void lireRappel() {
+        mDatabase = FirebaseDatabase.getInstance().getReference("rappels");
+        listView= findViewById(R.id.listeRappel);
+        arrayAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,arrayList);
+        listView.setAdapter(arrayAdapter);
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
-                mRappel.add(map);
+                String value = snapshot.getValue(Rappel.class).toString();
+                arrayList.add(value);
                 arrayAdapter.notifyDataSetChanged();
             }
 
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 

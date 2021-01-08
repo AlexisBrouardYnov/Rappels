@@ -8,11 +8,22 @@ import java.util.Date;
 public class Rappel {
     public String titre;
     public String contenu;
+    public String date;
+    public String heure;
+    public Boolean notification;
 
-    public Rappel() {}
+    public Rappel() {
+    }
 
-    public Rappel(String titre, String contenu) {
+    public Rappel(String titre, String contenu, String date, String heure,Boolean notification) {
         this.titre = titre;
         this.contenu = contenu;
+        this.date = date;
+        this.heure = heure;
+        this.notification = notification;
+    }
+
+    public String toString() {
+        return this.titre + "\n" + date + " à " + heure+"\n"+"\n"+contenu;
     }
 }

@@ -14,7 +14,7 @@
         android:layout_marginTop="111dp"
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="14dp"
-        android:text="Rappels"
+        android:text="RAPPELS"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="296dp"
-        android:layout_height="473dp"
+        android:layout_height="500dp"
         android:layout_marginStart="58dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="58dp"
@@ -51,11 +51,22 @@
 
             <ListView
                 android:id="@+id/listeRappel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="500dp">
 
             </ListView>
 
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="36dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
