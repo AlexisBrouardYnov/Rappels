@@ -10,17 +10,16 @@ public class Rappel {
     public String contenu;
     public String date;
     public String heure;
-    public Boolean notification;
+    //public Boolean notification;
 
     public Rappel() {
     }
 
-    public Rappel(String titre, String contenu, String date, String heure,Boolean notification) {
+    public Rappel(String titre, String contenu, String date, String heure) {
         this.titre = titre;
         this.contenu = contenu;
         this.date = date;
         this.heure = heure;
-        this.notification = notification;
     }
 
     public String toString() {

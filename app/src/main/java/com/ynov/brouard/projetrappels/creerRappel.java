@@ -45,7 +45,7 @@ public class creerRappel extends AppCompatActivity {
         EditText Econtenu = findViewById(R.id.editContent);
         EditText Edate = findViewById(R.id.editDate);
         EditText Eheure = findViewById(R.id.editHeure);
-        Switch Snotification = findViewById(R.id.notification);
+        //Switch Snotification = findViewById(R.id.notification);
         FloatingActionButton Bvalidation = findViewById(R.id.validerButton);
         TextView Tvalide = findViewById(R.id.txtEnvoye);
         TextView TverifChamps = findViewById(R.id.verifChamps);
@@ -62,14 +62,14 @@ public class creerRappel extends AppCompatActivity {
                 Scontenu = Econtenu.getText().toString();
                 Sdate = Edate.getText().toString();
                 Sheure = Eheure.getText().toString();
-                notification = Snotification.isChecked();
+                //notification = Snotification.isChecked();
 
 
                 if (Stitre.equals("") && Scontenu.equals("") && Sdate.equals("") && Sheure.equals("")) {
                     TverifChamps.setVisibility(View.VISIBLE);
                 }
                 else {
-                    ecrireRappel(Stitre,Scontenu,Sdate,Sheure,notification);
+                    ecrireRappel(Stitre,Scontenu,Sdate,Sheure);
                     TverifChamps.setVisibility(View.INVISIBLE);
                     Bvalidation.setVisibility(View.INVISIBLE);
                     Tvalide.setVisibility(View.VISIBLE);
@@ -77,8 +77,8 @@ public class creerRappel extends AppCompatActivity {
             }
         });
     }
-    private void ecrireRappel(String titre, String contenu,String date,String heure,Boolean notification) {
-        Rappel rappel = new Rappel(titre,contenu,date,heure,notification);
+    private void ecrireRappel(String titre, String contenu,String date,String heure) {
+        Rappel rappel = new Rappel(titre,contenu,date,heure);
 
         //Ecriture du rappel
 
@@ -86,14 +86,14 @@ public class creerRappel extends AppCompatActivity {
 
         //Ajout de notifications si le switch est activé
 
-        if(notification==true){
+        /*if(notification==true){
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"rappels")
                     .setSmallIcon(R.drawable.ic_baseline_article_24)
                     .setContentTitle(titre)
                     .setContentText(contenu)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        }
+        }*/
     }
 }
 

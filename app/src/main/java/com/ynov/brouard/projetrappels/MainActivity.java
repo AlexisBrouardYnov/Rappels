@@ -39,12 +39,20 @@ public class MainActivity extends AppCompatActivity {
 
         lireRappel();
         FloatingActionButton ajouterRappel = findViewById(R.id.ajouterRappel);
+        FloatingActionButton modifierRappel = findViewById(R.id.modifierRappel);
 
 
         ajouterRappel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent IntentActivity = new Intent(MainActivity.this, creerRappel.class);
+                startActivity(IntentActivity);
+            }
+        });
+        modifierRappel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent IntentActivity = new Intent(MainActivity.this, modifierRappel.class);
                 startActivity(IntentActivity);
             }
         });
