@@ -65,7 +65,7 @@ public class creerRappel extends AppCompatActivity {
                 //notification = Snotification.isChecked();
 
 
-                if (Stitre.equals("") && Scontenu.equals("") && Sdate.equals("") && Sheure.equals("")) {
+                if (Stitre.equals("") || Scontenu.equals("") || Sdate.equals("") || Sheure.equals("")) {
                     TverifChamps.setVisibility(View.VISIBLE);
                 }
                 else {
