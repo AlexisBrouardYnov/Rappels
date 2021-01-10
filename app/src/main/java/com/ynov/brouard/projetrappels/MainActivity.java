@@ -37,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Fonction de lecture des rappels
         lireRappel();
         FloatingActionButton ajouterRappel = findViewById(R.id.ajouterRappel);
         FloatingActionButton modifierRappel = findViewById(R.id.modifierRappel);
 
-
+        //Changer activité vers CreerRappel
         ajouterRappel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(IntentActivity);
             }
         });
+
+        //Changer activité vers modifierRappel
         modifierRappel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    //Message de validation pour quitter l'application
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -75,11 +80,14 @@ public class MainActivity extends AppCompatActivity {
         }).show();
     }
 
+    //Fonction de lecture des rappels
     public void lireRappel() {
         mDatabase = FirebaseDatabase.getInstance().getReference("rappels");
         listView= findViewById(R.id.listeRappel);
         arrayAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,arrayList);
         listView.setAdapter(arrayAdapter);
+
+        //Lecture et écriture dans la liste
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -102,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

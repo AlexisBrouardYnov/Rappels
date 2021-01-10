@@ -55,6 +55,7 @@ public class creerRappel extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        //Validation de l'écriture
         Bvalidation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,11 +65,12 @@ public class creerRappel extends AppCompatActivity {
                 Sheure = Eheure.getText().toString();
                 //notification = Snotification.isChecked();
 
-
+                //Vérification de champs vides
                 if (Stitre.equals("") || Scontenu.equals("") || Sdate.equals("") || Sheure.equals("")) {
                     TverifChamps.setVisibility(View.VISIBLE);
                 }
                 else {
+                    //Fonction ecriture des rappels
                     ecrireRappel(Stitre,Scontenu,Sdate,Sheure);
                     TverifChamps.setVisibility(View.INVISIBLE);
                     Bvalidation.setVisibility(View.INVISIBLE);

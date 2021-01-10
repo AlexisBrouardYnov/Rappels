@@ -171,14 +171,24 @@
         android:id="@+id/validerTitre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="212dp"
         android:layout_marginTop="19dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginBottom="44dp"
-        android:text="Valider"
+        android:text="Importer"
         app:layout_constraintBottom_toTopOf="@+id/contenuRappel2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintTop_toBottomOf="@+id/EmodifierTitre"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/supprimerRappel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="44dp"
+        android:text="Supprimer"
+        app:layout_constraintBottom_toTopOf="@+id/contenuRappel2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmodifierTitre"
         app:layout_constraintVertical_bias="0.0" />
